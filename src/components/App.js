@@ -1,10 +1,10 @@
 import React from "react";
 // import { Route, Redirect, Switch } from "react-router-dom";
 
-import { Container, /* createTheme, ThemeProvider, */ Box } from "@mui/material";
-// import rtlPlugin from "stylis-plugin-rtl";
-// import { CacheProvider } from "@emotion/react";
-// import createCache from "@emotion/cache";
+import { Container, createTheme, ThemeProvider, Box } from "@mui/material";
+import rtlPlugin from "stylis-plugin-rtl";
+import { CacheProvider } from "@emotion/react";
+import createCache from "@emotion/cache";
 
 import "./App.css";
 
@@ -13,32 +13,32 @@ import Home from "./Home";
 // import ShipmentTracking from "./ShipmentTracking/ShipmentTracking";
 import Footer from "./Footer";
 
-// import LANGUAGE from "../shared/localization/language";
+import LANGUAGE from "../shared/localization/language";
 
 // Create rtl cache
-// const cacheRtl = createCache({
-//   key: "muirtl",
-//   stylisPlugins: [rtlPlugin],
-// });
+const cacheRtl = createCache({
+  key: "muirtl",
+  stylisPlugins: [rtlPlugin],
+});
 
-// // Create ltr cache
-// const cacheLtr = createCache({
-//   key: "muiltr",
-// });
+// Create ltr cache
+const cacheLtr = createCache({
+  key: "muiltr",
+});
 
-// const theme = createTheme({
-//   direction: LANGUAGE.dir,
-//   typography: {
-//     fontFamily: "'Cairo', sans-serif",
-//   },
-// });
+const theme = createTheme({
+  direction: LANGUAGE.dir,
+  typography: {
+    fontFamily: "'Cairo', sans-serif",
+  },
+});
 
 const App = () => {
   return (
     <React.Fragment>
-    {/* <ThemeProvider theme={theme}>
-      <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>*/}
-        <Box id="app" dir={'ltr'/* LANGUAGE.dir */}>
+    <ThemeProvider theme={theme}>
+      <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>
+        <Box id="app" dir={LANGUAGE.dir}>
           {/* <Navbar />  */}
 
           <Container className="main-container">
@@ -55,8 +55,8 @@ const App = () => {
           <Home />
           <Footer />
          </Box>
-      {/*</CacheProvider>
-    </ThemeProvider> */}
+      </CacheProvider>
+    </ThemeProvider>
     </React.Fragment>
   );
 };
