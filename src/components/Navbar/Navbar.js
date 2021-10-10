@@ -12,7 +12,7 @@ const bostaLogo = require(`../../assets/images/bosta_logo_${
 }.svg`).default;
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  /* const [openMenu, setOpenMenu] = useState(false);
 
   const navbarRef = useRef();
   const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
@@ -75,10 +75,11 @@ const Navbar = () => {
         document.removeEventListener("click", closeMenu);
       };
     }
-  }, [openMenu]);
+  }, [openMenu]); */
 
   return (
-    <AppBar position="fixed" className="navbar" ref={navbarRef}>
+    <div>Navbar</div>
+    /* <AppBar position="fixed" className="navbar" ref={navbarRef}>
       <Box style={{ borderBottom: "1px solid #ddd", padding: "18px 0" }}>
         <Grid container maxWidth="lg" style={{ margin: "auto" }}>
           <Grid container justifyContent="flex-start" item xs={6} md={2}>
@@ -153,7 +154,7 @@ const Navbar = () => {
         </Grid>
       </Box>
       <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden>
-    </AppBar>
+    </AppBar> */
   );
 };
 
