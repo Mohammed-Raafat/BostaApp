@@ -1,24 +1,64 @@
+import React from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
 
-import './App.css';
+import { Container, createTheme, ThemeProvider, Box } from "@mui/material";
+// import rtlPlugin from "stylis-plugin-rtl";
+// import { CacheProvider } from "@emotion/react";
+// import createCache from "@emotion/cache";
 
-function App() {
+import "./App.css";
+
+// import Navbar from "./Navbar/Navbar";
+import Home from "./Home";
+// import ShipmentTracking from "./ShipmentTracking/ShipmentTracking";
+import Footer from "./Footer";
+
+import LANGUAGE from "../shared/localization/language";
+
+// Create rtl cache
+// const cacheRtl = createCache({
+//   key: "muirtl",
+//   stylisPlugins: [rtlPlugin],
+// });
+
+// // Create ltr cache
+// const cacheLtr = createCache({
+//   key: "muiltr",
+// });
+
+// const theme = createTheme({
+//   direction: LANGUAGE.dir,
+//   typography: {
+//     fontFamily: "'Cairo', sans-serif",
+//   },
+// });
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Version 4
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+    {/* <ThemeProvider theme={theme}>
+      <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>
+        <Box id="app" dir={LANGUAGE.dir}>
+          <Navbar /> */}
+
+          <Container className="main-container">
+            <Switch>
+              {/* <Route
+                path="/tracking-shipment/:trackingNum?"
+                exact
+                component={ShipmentTracking}
+              /> */}
+              <Route path="/" exact component={Home} />
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
+          </Container>
+
+          <Footer />
+        {/* </Box>
+      </CacheProvider>
+    </ThemeProvider> */}
+    </React.Fragment>
   );
-}
+};
 
 export default App;
