@@ -1,6 +1,8 @@
 import React from "react";
 // import { Route, Redirect, Switch } from "react-router-dom";
 
+import {  Box } from "@mui/material";
+
 // import { Container, createTheme, ThemeProvider, Box } from "@mui/material";
 // import rtlPlugin from "stylis-plugin-rtl";
 // import { CacheProvider } from "@emotion/react";
@@ -37,8 +39,8 @@ const App = () => {
   return (
     <React.Fragment>
     {/* <ThemeProvider theme={theme}>
-      <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>
-        <Box id="app" dir={LANGUAGE.dir}>*/}
+      <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>*/}
+        <Box id="app" dir={'ltr'/* LANGUAGE.dir */}>
           {/* <Navbar />  */}
 
           {/* <Container className="main-container">
@@ -54,8 +56,8 @@ const App = () => {
           </Container> */}
           <Home />
           <Footer />
-        {/* </Box>
-      </CacheProvider>
+         </Box>
+      {/*</CacheProvider>
     </ThemeProvider> */}
     </React.Fragment>
   );
