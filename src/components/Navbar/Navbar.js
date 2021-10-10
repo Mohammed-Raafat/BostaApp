@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+// import React, { useState, useEffect, useRef } from "react";
+// import { Link, NavLink } from "react-router-dom";
 
-import { Grid, Divider, Hidden, IconButton, Box, AppBar } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+// import { Grid, Divider, Hidden, IconButton, Box, AppBar } from "@mui/material";
+// import MenuIcon from "@mui/icons-material/Menu";
 
-// import SmallDeviceMenu from "./SmallDeviceMenu";
-import LANGUAGE from "../../shared/localization/language";
+// // import SmallDeviceMenu from "./SmallDeviceMenu";
+// import LANGUAGE from "../../shared/localization/language";
 
-const bostaLogo = require(`../../assets/images/bosta_logo_${
-  LANGUAGE.language === "ar" ? "ar" : "en"
-}.svg`).default;
+// const bostaLogo = require(`../../assets/images/bosta_logo_${
+//   LANGUAGE.language === "ar" ? "ar" : "en"
+// }.svg`).default;
+
+import React from "react";
 
 const Navbar = () => {
   /* const [openMenu, setOpenMenu] = useState(false);
