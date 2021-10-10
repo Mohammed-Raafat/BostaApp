@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Grid, Divider, Hidden, IconButton, Box, AppBar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import SmallDeviceMenu from "./SmallDeviceMenu";
+// import SmallDeviceMenu from "./SmallDeviceMenu";
 import LANGUAGE from "../../shared/localization/language";
 
 const bostaLogo = require(`../../assets/images/bosta_logo_${
