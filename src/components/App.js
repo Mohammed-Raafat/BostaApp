@@ -1,5 +1,5 @@
 import React from "react";
-// import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 
 import { Container, createTheme, ThemeProvider, Box } from "@mui/material";
 import rtlPlugin from "stylis-plugin-rtl";
@@ -42,15 +42,15 @@ const App = () => {
           {/* <Navbar />  */}
 
           <Container className="main-container">
-          {/*   <Switch>
-              <Route
+            <Switch>
+              {/* <Route
                 path="/tracking-shipment/:trackingNum?"
                 exact
                 component={ShipmentTracking}
-              />
+              /> */}
               <Route path="/" exact component={Home} />
               <Route render={() => <Redirect to="/" />} />
-            </Switch> */}
+            </Switch>
           </Container>
           <Home />
           <Footer />
