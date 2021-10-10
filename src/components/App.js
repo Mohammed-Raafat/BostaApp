@@ -8,7 +8,7 @@ import React from "react";
 
 import "./App.css";
 
-import Navbar from "./Navbar/Navbar";
+// import Navbar from "./Navbar/Navbar";
 import Home from "./Home";
 // import ShipmentTracking from "./ShipmentTracking/ShipmentTracking";
 import Footer from "./Footer";
@@ -39,7 +39,7 @@ const App = () => {
     {/* <ThemeProvider theme={theme}>
       <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>
         <Box id="app" dir={LANGUAGE.dir}>*/}
-          <Navbar /> 
+          {/* <Navbar />  */}
 
           {/* <Container className="main-container">
             <Switch>
