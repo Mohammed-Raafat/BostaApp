@@ -43,11 +43,11 @@ const App = () => {
 
           <Container className="main-container">
             <Switch>
-              <Route
+              {/* <Route
                 path="/tracking-shipment/:trackingNum?"
                 exact
                 component={ShipmentTracking}
-              />
+              /> */}
               <Route path="/" exact component={Home} />
               <Route render={() => <Redirect to="/" />} />
             </Switch>
