@@ -1,9 +1,7 @@
 import React from "react";
 // import { Route, Redirect, Switch } from "react-router-dom";
 
-import {  Box } from "@mui/material";
-
-// import { Container, createTheme, ThemeProvider, Box } from "@mui/material";
+import { Container, /* createTheme, ThemeProvider, */ Box } from "@mui/material";
 // import rtlPlugin from "stylis-plugin-rtl";
 // import { CacheProvider } from "@emotion/react";
 // import createCache from "@emotion/cache";
@@ -43,8 +41,8 @@ const App = () => {
         <Box id="app" dir={'ltr'/* LANGUAGE.dir */}>
           {/* <Navbar />  */}
 
-          {/* <Container className="main-container">
-            <Switch>
+          <Container className="main-container">
+          {/*   <Switch>
               <Route
                 path="/tracking-shipment/:trackingNum?"
                 exact
@@ -52,8 +50,8 @@ const App = () => {
               />
               <Route path="/" exact component={Home} />
               <Route render={() => <Redirect to="/" />} />
-            </Switch>
-          </Container> */}
+            </Switch> */}
+          </Container>
           <Home />
           <Footer />
          </Box>
