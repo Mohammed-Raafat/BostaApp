@@ -10,7 +10,7 @@ import "./App.css";
 
 // import Navbar from "./Navbar/Navbar";
 import Home from "./Home";
-import ShipmentTracking from "./ShipmentTracking/ShipmentTracking";
+// import ShipmentTracking from "./ShipmentTracking/ShipmentTracking";
 import Footer from "./Footer";
 
 import LANGUAGE from "../shared/localization/language";
