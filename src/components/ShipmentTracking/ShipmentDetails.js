@@ -1,0 +1,68 @@
+import React from "react";
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+
+import { getDate_DD_MM_YY, getTime } from "../../shared/helperFunctions";
+import LANGUAGE from "../../shared/localization/language";
+
+const ShipmentDetails = (props) => {
+  const { transitEvents } = props;
+  const { SHIPMENT_DETAILS, BRANCH, DATE, TIME, DETAILS, NOT_DETERMINED } = LANGUAGE.SHIPMENT_TRACKING;
+
+  const rows = transitEvents.map((transit) => {
+    const dateTime = new Date(transit.timestamp);
+    return {
+      branch: NOT_DETERMINED,
+      date: getDate_DD_MM_YY(dateTime),
+      time: getTime(dateTime),
+      details: LANGUAGE.SHIPMENT_STATE[transit.state],
+    };
+  });
+
+  const Cell = (align, content, key) => {
+    align = align === "ar" ? "right" : "left";
+    return (
+      <TableCell key={key} align={align} style={{ fontWeight: "bold" }}>
+        {content}
+      </TableCell>
+    );
+  };
+
+  return (
+    <React.Fragment>
+      <Box className="section-title">{SHIPMENT_DETAILS}</Box>
+      <TableContainer style={{ borderRadius: 4, border: "1px solid #f1f1f1" }}>
+        <Table aria-label="simple table">
+          <TableHead style={{ backgroundColor: "#fafafa" }}>
+            <TableRow>
+              {[BRANCH, DATE, TIME, DETAILS].map((content, i) =>
+                Cell(LANGUAGE.language, content, i)
+              )}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row, index) => (
+              <TableRow
+                key={index}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                {Object.values(row).map((value, i) =>
+                  Cell(LANGUAGE.language, value, i)
+                )}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </React.Fragment>
+  );
+};
+
+export default ShipmentDetails;
