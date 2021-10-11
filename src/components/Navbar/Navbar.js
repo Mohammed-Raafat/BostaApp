@@ -12,16 +12,10 @@ const Navbar = (props) => {
   const { logoLang } = props;
 
   const [openMenu, setOpenMenu] = useState(false);
-  // const [bostaLogo, setBostaLogo] = useState()
   
-  const bostaLogo = require(`../../assets/images/bosta_logo_${logoLang}.svg`).default;
   const navbarRef = useRef();
+  const bostaLogo = require(`../../assets/images/bosta_logo_${logoLang || 'en'}.svg`).default;
   const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
-
-  /* useEffect(() => {
-    
-    setBostaLogo(logo);
-  }, []); */
   
   const handleLanguageClick = () => {
     if (LANGUAGE.language === "ar") {

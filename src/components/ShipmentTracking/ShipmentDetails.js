@@ -26,10 +26,9 @@ const ShipmentDetails = (props) => {
     };
   });
 
-  const Cell = (align, content, key) => {
-    align = align === "ar" ? "right" : "left";
+  const Cell = (content, key) => {
     return (
-      <TableCell key={key} align={align} style={{ fontWeight: "bold" }}>
+      <TableCell key={key} style={{ fontWeight: "bold" }}>
         {content}
       </TableCell>
     );
@@ -43,7 +42,7 @@ const ShipmentDetails = (props) => {
           <TableHead style={{ backgroundColor: "#fafafa" }}>
             <TableRow>
               {[BRANCH, DATE, TIME, DETAILS].map((content, i) =>
-                Cell(LANGUAGE.language, content, i)
+                Cell(content, i)
               )}
             </TableRow>
           </TableHead>
@@ -54,7 +53,7 @@ const ShipmentDetails = (props) => {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 {Object.values(row).map((value, i) =>
-                  Cell(LANGUAGE.language, value, i)
+                  Cell(value, i)
                 )}
               </TableRow>
             ))}
