@@ -13,7 +13,7 @@ import LANGUAGE from "../../shared/localization/language";
 
 const Navbar = () => {
   const bostaLogo = require(`../../assets/images/bosta_logo_${
-    "en"//LANGUAGE.language === "ar" ? "ar" : "en"
+    LANGUAGE.language === "ar" ? "ar" : "en"
   }.svg`).default;
    const [openMenu, setOpenMenu] = useState(false);
 
