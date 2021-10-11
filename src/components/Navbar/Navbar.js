@@ -14,7 +14,7 @@ import LANGUAGE from "../../shared/localization/language";
 
 const Navbar = () => {
   const bostaLogo = require(`../../assets/images/bosta_logo_${
-    LANGUAGE.language === "ar" ? "ar" : "en"
+    "en"//LANGUAGE.language === "ar" ? "ar" : "en"
   }.svg`).default;
   //  const [openMenu, setOpenMenu] = React.useState(false);
 
