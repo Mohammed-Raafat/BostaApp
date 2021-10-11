@@ -7,7 +7,7 @@ import React from "react";
 // import MenuIcon from "@mui/icons-material/Menu";
 
 // // import SmallDeviceMenu from "./SmallDeviceMenu";
-import LANGUAGE from "../../shared/localization/language";
+// import LANGUAGE from "../../shared/localization/language";
 
 // const bostaLogo = require(`../../assets/images/bosta_logo_${
 //   LANGUAGE.language === "ar" ? "ar" : "en"
