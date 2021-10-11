@@ -81,8 +81,7 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <div>{MAIN}</div>
-    /* <AppBar position="fixed" className="navbar" ref={navbarRef}>
+    <AppBar position="fixed" className="navbar" ref={navbarRef}>
       <Box style={{ borderBottom: "1px solid #ddd", padding: "18px 0" }}>
         <Grid container maxWidth="lg" style={{ margin: "auto" }}>
           <Grid container justifyContent="flex-start" item xs={6} md={2}>
@@ -156,8 +155,8 @@ const Navbar = () => {
           </Hidden>
         </Grid>
       </Box>
-      <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden>
-    </AppBar> */
+      {/* <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden> */}
+    </AppBar>
   );
 };
 
