@@ -18,7 +18,7 @@ const Navbar = () => {
    const [openMenu, setOpenMenu] = useState(false);
 
   const navbarRef = useRef();
-  // const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
+  const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
   // const handleLanguageClick = () => {
   //   if (LANGUAGE.language === "ar") {

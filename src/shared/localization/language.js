@@ -6,6 +6,6 @@ const lang = {
   en: english
 };
 
-const LANGUAGE = lang[localStorage.getItem("userLanguage") || "en"];
+const LANGUAGE = lang.en; //lang[localStorage.getItem("userLanguage") || "en"];
 
 export default LANGUAGE;
