@@ -6,7 +6,18 @@ const lang = {
   en: english
 };
 
-// const LANGUAGE = lang.en; //lang[localStorage.getItem("userLanguage") || "en"];
-const LANGUAGE = localStorage.getItem("userLanguage")? lang[localStorage.getItem("userLanguage")] : lang.en;
+const defaultLanguage = "ar";
+
+const getUserLanguage = () => {
+  let language = localStorage.getItem("userLanguage");
+  if(language) {
+    return lang[language];
+  } else {
+    localStorage.setItem("userLanguage", defaultLanguage);
+    return lang[defaultLanguage];
+  }
+}
+
+const LANGUAGE = getUserLanguage();
 
 export default LANGUAGE;

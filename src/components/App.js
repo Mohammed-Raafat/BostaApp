@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import { Container, createTheme, ThemeProvider, Box } from "@mui/material";
@@ -34,6 +34,10 @@ const theme = createTheme({
 });
 
 const App = () => {
+  useEffect(() => {
+    document.title = LANGUAGE.BROWSER_TITLE;
+  }, []);
+
   return (
     <React.Fragment>
     <ThemeProvider theme={theme}>
