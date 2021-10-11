@@ -20,41 +20,41 @@ const Navbar = () => {
   const navbarRef = useRef();
   const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
-  // const handleLanguageClick = () => {
-  //   if (LANGUAGE.language === "ar") {
-  //     localStorage.setItem("userLanguage", "en");
-  //   } else if (LANGUAGE.language === "en") {
-  //     localStorage.setItem("userLanguage", "ar");
-  //   }
-  //   window.location.reload(false);
-  // };
+  const handleLanguageClick = () => {
+    if (LANGUAGE.language === "ar") {
+      localStorage.setItem("userLanguage", "en");
+    } else if (LANGUAGE.language === "en") {
+      localStorage.setItem("userLanguage", "ar");
+    }
+    window.location.reload(false);
+  };
 
-  // const menuItems = [
-  //   {
-  //     title: MAIN,
-  //     link: "/",
-  //   },
-  //   {
-  //     title: PRICES,
-  //     link: "/prices",
-  //   },
-  //   {
-  //     title: CALL_SALES,
-  //     link: "/call-sales",
-  //   },
-  //   {
-  //     title: TRACK_SHIPMENT,
-  //     link: "/tracking-shipment",
-  //   },
-  //   {
-  //     title: LOGIN,
-  //     link: "/login",
-  //   },
-  //   {
-  //     title: LANGUAGE.language === "ar" ? "ENG" : "عربي",
-  //     onClick: handleLanguageClick,
-  //   },
-  // ];
+  const menuItems = [
+    {
+      title: MAIN,
+      link: "/",
+    },
+    {
+      title: PRICES,
+      link: "/prices",
+    },
+    {
+      title: CALL_SALES,
+      link: "/call-sales",
+    },
+    {
+      title: TRACK_SHIPMENT,
+      link: "/tracking-shipment",
+    },
+    {
+      title: LOGIN,
+      link: "/login",
+    },
+    {
+      title: LANGUAGE.language === "ar" ? "ENG" : "عربي",
+      onClick: handleLanguageClick,
+    },
+  ];
 
   const handleMenuIconClick = () => {
     setOpenMenu(!openMenu);
