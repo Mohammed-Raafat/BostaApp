@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-// import React from "react";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -15,74 +14,73 @@ const bostaLogo = require(`../../assets/images/bosta_logo_${
 
 
 const Navbar = () => {
-  //  const [openMenu, setOpenMenu] = React.useState(false);
+   const [openMenu, setOpenMenu] = useState(false);
 
-  // const navbarRef = useRef();
-  // const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
+  const navbarRef = useRef();
+  const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
-  // const handleLanguageClick = () => {
-  //   if (LANGUAGE.language === "ar") {
-  //     localStorage.setItem("userLanguage", "en");
-  //   } else if (LANGUAGE.language === "en") {
-  //     localStorage.setItem("userLanguage", "ar");
-  //   }
-  //   window.location.reload(false);
-  // };
+  const handleLanguageClick = () => {
+    if (LANGUAGE.language === "ar") {
+      localStorage.setItem("userLanguage", "en");
+    } else if (LANGUAGE.language === "en") {
+      localStorage.setItem("userLanguage", "ar");
+    }
+    window.location.reload(false);
+  };
 
-  // const menuItems = [
-  //   {
-  //     title: MAIN,
-  //     link: "/",
-  //   },
-  //   {
-  //     title: PRICES,
-  //     link: "/prices",
-  //   },
-  //   {
-  //     title: CALL_SALES,
-  //     link: "/call-sales",
-  //   },
-  //   {
-  //     title: TRACK_SHIPMENT,
-  //     link: "/tracking-shipment",
-  //   },
-  //   {
-  //     title: LOGIN,
-  //     link: "/login",
-  //   },
-  //   {
-  //     title: LANGUAGE.language === "ar" ? "ENG" : "عربي",
-  //     onClick: handleLanguageClick,
-  //   },
-  // ];
+  const menuItems = [
+    {
+      title: MAIN,
+      link: "/",
+    },
+    {
+      title: PRICES,
+      link: "/prices",
+    },
+    {
+      title: CALL_SALES,
+      link: "/call-sales",
+    },
+    {
+      title: TRACK_SHIPMENT,
+      link: "/tracking-shipment",
+    },
+    {
+      title: LOGIN,
+      link: "/login",
+    },
+    {
+      title: LANGUAGE.language === "ar" ? "ENG" : "عربي",
+      onClick: handleLanguageClick,
+    },
+  ];
 
-  // const handleMenuIconClick = () => {
-  //   setOpenMenu(!openMenu);
-  // };
+  const handleMenuIconClick = () => {
+    setOpenMenu(!openMenu);
+  };
 
-  // const closeMenu = (e) => {
-  //   if (
-  //     openMenu &&
-  //     navbarRef.current &&
-  //     !navbarRef.current.contains(e.target)
-  //   ) {
-  //     setOpenMenu(false);
-  //   }
-  // };
+  const closeMenu = (e) => {
+    if (
+      openMenu &&
+      navbarRef.current &&
+      !navbarRef.current.contains(e.target)
+    ) {
+      setOpenMenu(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   if (openMenu) {
-  //     document.addEventListener("click", closeMenu);
+  useEffect(() => {
+    if (openMenu) {
+      document.addEventListener("click", closeMenu);
 
-  //     return () => {
-  //       document.removeEventListener("click", closeMenu);
-  //     };
-  //   }
-  // }, [openMenu]);
+      return () => {
+        document.removeEventListener("click", closeMenu);
+      };
+    }
+  }, [openMenu]);
 
   return (
-    <div>Navbar</div>
-    /* <AppBar position="fixed" className="navbar" ref={navbarRef}>
+    <AppBar position="fixed" className="navbar" ref={navbarRef}>
       <Box style={{ borderBottom: "1px solid #ddd", padding: "18px 0" }}>
         <Grid container maxWidth="lg" style={{ margin: "auto" }}>
           <Grid container justifyContent="flex-start" item xs={6} md={2}>
@@ -157,7 +155,7 @@ const Navbar = () => {
         </Grid>
       </Box>
       <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden>
-    </AppBar> */
+    </AppBar>
   );
 };
 
