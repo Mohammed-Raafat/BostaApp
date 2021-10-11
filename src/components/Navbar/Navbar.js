@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Grid, Divider, Hidden, IconButton, Box, AppBar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-// import SmallDeviceMenu from "./SmallDeviceMenu";
+import SmallDeviceMenu from "./SmallDeviceMenu";
 import LANGUAGE from "../../shared/localization/language";
 
 
@@ -13,7 +13,7 @@ import LANGUAGE from "../../shared/localization/language";
 
 const Navbar = () => {
   const bostaLogo = require(`../../assets/images/bosta_logo_${
-    LANGUAGE.language === "ar" ? "ar" : "en"
+    "en"//LANGUAGE.language === "ar" ? "ar" : "en"
   }.svg`).default;
    const [openMenu, setOpenMenu] = useState(false);
 
@@ -155,7 +155,7 @@ const Navbar = () => {
           </Hidden>
         </Grid>
       </Box>
-      {/* <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden> */}
+      <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden>
     </AppBar>
   );
 };
