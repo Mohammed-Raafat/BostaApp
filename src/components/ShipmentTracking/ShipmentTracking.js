@@ -9,6 +9,7 @@ import DeliveryStatus from "./DeliveryStatus/DeliveryStatus";
 import ShipmentDetails from "./ShipmentDetails";
 import DeliveryAddress from "./DeliveryAddress";
 import ShipmentProblem from "./ShipmentProblem";
+import { axios } from 'axios';
 
 const ShipmentTracking = (props) => {
   const { match } = props;
@@ -28,7 +29,7 @@ const ShipmentTracking = (props) => {
   const getShipmentDetails = () => {
     if (Number(trackingNum)) {
       setLoading(true);
-      BostaAPI.get(`/shipments/track/${trackingNum}`)
+      axios.get(`https://tracking.bosta.co/shipments/track/${trackingNum}`)
         .then((res) => {
           setShipmentDetails(res.data);
           setLoading(false);
