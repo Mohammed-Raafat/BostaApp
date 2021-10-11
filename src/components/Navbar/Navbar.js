@@ -8,7 +8,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SmallDeviceMenu from "./SmallDeviceMenu";
 import LANGUAGE from "../../shared/localization/language";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { logoLang } = props;
+
   const [openMenu, setOpenMenu] = useState(false);
   const [bostaLogo, setBostaLogo] = useState()
   
@@ -16,9 +18,7 @@ const Navbar = () => {
   const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
   useEffect(() => {
-    const logo = require(`../../assets/images/bosta_logo_${
-      LANGUAGE.language === "ar" ? "ar" : "en"
-    }.svg`).default;
+    const logo = require(`../../assets/images/bosta_logo_${logoLang}.svg`).default;
     
     setBostaLogo(logo);
   }, []);

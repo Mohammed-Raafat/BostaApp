@@ -39,7 +39,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CacheProvider value={LANGUAGE.dir === "rtl" ? cacheRtl : cacheLtr}>
         <Box id="app" dir={LANGUAGE.dir}>
-          <Navbar /> 
+          <Navbar logoLang={LANGUAGE.language === "ar" ? "ar" : "en"}/> 
 
           <Container className="main-container">
             <Switch>
