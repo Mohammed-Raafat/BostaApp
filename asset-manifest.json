@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bosta-app/static/css/main.a5d3cfd9.chunk.css",
+    "main.js": "/bosta-app/static/js/main.55944573.chunk.js",
+    "main.js.map": "/bosta-app/static/js/main.55944573.chunk.js.map",
+    "runtime-main.js": "/bosta-app/static/js/runtime-main.cccc633e.js",
+    "runtime-main.js.map": "/bosta-app/static/js/runtime-main.cccc633e.js.map",
+    "static/js/2.8c489db6.chunk.js": "/bosta-app/static/js/2.8c489db6.chunk.js",
+    "static/js/2.8c489db6.chunk.js.map": "/bosta-app/static/js/2.8c489db6.chunk.js.map",
+    "index.html": "/bosta-app/index.html",
+    "static/css/main.a5d3cfd9.chunk.css.map": "/bosta-app/static/css/main.a5d3cfd9.chunk.css.map",
+    "static/js/2.8c489db6.chunk.js.LICENSE.txt": "/bosta-app/static/js/2.8c489db6.chunk.js.LICENSE.txt",
+    "static/media/bosta_logo_ar.svg": "/bosta-app/static/media/bosta_logo_ar.26249744.svg",
+    "static/media/bosta_logo_en.svg": "/bosta-app/static/media/bosta_logo_en.c0e658a4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cccc633e.js",
+    "static/js/2.8c489db6.chunk.js",
+    "static/css/main.a5d3cfd9.chunk.css",
+    "static/js/main.55944573.chunk.js"
+  ]
+}
