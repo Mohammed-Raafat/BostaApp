@@ -13,48 +13,48 @@ import LANGUAGE from "../../shared/localization/language";
 
 const Navbar = () => {
   const bostaLogo = require(`../../assets/images/bosta_logo_${
-    "en"//LANGUAGE.language === "ar" ? "ar" : "en"
+    LANGUAGE.language === "ar" ? "ar" : "en"
   }.svg`).default;
    const [openMenu, setOpenMenu] = useState(false);
 
   const navbarRef = useRef();
   const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
-  // const handleLanguageClick = () => {
-  //   if (LANGUAGE.language === "ar") {
-  //     localStorage.setItem("userLanguage", "en");
-  //   } else if (LANGUAGE.language === "en") {
-  //     localStorage.setItem("userLanguage", "ar");
-  //   }
-  //   window.location.reload(false);
-  // };
+  const handleLanguageClick = () => {
+    if (LANGUAGE.language === "ar") {
+      localStorage.setItem("userLanguage", "en");
+    } else if (LANGUAGE.language === "en") {
+      localStorage.setItem("userLanguage", "ar");
+    }
+    window.location.reload(false);
+  };
 
-  // const menuItems = [
-  //   {
-  //     title: MAIN,
-  //     link: "/",
-  //   },
-  //   {
-  //     title: PRICES,
-  //     link: "/prices",
-  //   },
-  //   {
-  //     title: CALL_SALES,
-  //     link: "/call-sales",
-  //   },
-  //   {
-  //     title: TRACK_SHIPMENT,
-  //     link: "/tracking-shipment",
-  //   },
-  //   {
-  //     title: LOGIN,
-  //     link: "/login",
-  //   },
-  //   {
-  //     title: LANGUAGE.language === "ar" ? "ENG" : "عربي",
-  //     onClick: handleLanguageClick,
-  //   },
-  // ];
+  const menuItems = [
+    {
+      title: MAIN,
+      link: "/",
+    },
+    {
+      title: PRICES,
+      link: "/prices",
+    },
+    {
+      title: CALL_SALES,
+      link: "/call-sales",
+    },
+    {
+      title: TRACK_SHIPMENT,
+      link: "/tracking-shipment",
+    },
+    {
+      title: LOGIN,
+      link: "/login",
+    },
+    {
+      title: LANGUAGE.language === "ar" ? "ENG" : "عربي",
+      onClick: handleLanguageClick,
+    },
+  ];
 
   const handleMenuIconClick = () => {
     setOpenMenu(!openMenu);
@@ -81,8 +81,7 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <div>Navbar</div>
-    /* <AppBar position="fixed" className="navbar" ref={navbarRef}>
+    <AppBar position="fixed" className="navbar" ref={navbarRef}>
       <Box style={{ borderBottom: "1px solid #ddd", padding: "18px 0" }}>
         <Grid container maxWidth="lg" style={{ margin: "auto" }}>
           <Grid container justifyContent="flex-start" item xs={6} md={2}>
@@ -156,8 +155,8 @@ const Navbar = () => {
           </Hidden>
         </Grid>
       </Box>
-      <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden>
-    </AppBar> */
+      {/* <Hidden mdUp>{openMenu && <SmallDeviceMenu items={menuItems} />}</Hidden> */}
+    </AppBar>
   );
 };
 
