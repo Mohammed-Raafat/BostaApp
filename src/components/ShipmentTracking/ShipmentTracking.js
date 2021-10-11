@@ -26,7 +26,7 @@ const ShipmentTracking = (props) => {
   const [error, setError] = useState(null);
 
   const getShipmentDetails = () => {
-    /* if (Number(trackingNum)) {
+    if (Number(trackingNum)) {
       setLoading(true);
       BostaAPI.get(`/shipments/track/${trackingNum}`)
         .then((res) => {
@@ -55,7 +55,7 @@ const ShipmentTracking = (props) => {
           }
           setLoading(false);
         });
-    } */
+    }
   };
 
   useEffect(() => {
