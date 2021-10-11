@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-// import React from "react";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -16,9 +15,9 @@ const Navbar = () => {
   const bostaLogo = require(`../../assets/images/bosta_logo_${
     "en"//LANGUAGE.language === "ar" ? "ar" : "en"
   }.svg`).default;
-  //  const [openMenu, setOpenMenu] = React.useState(false);
+   const [openMenu, setOpenMenu] = useState(false);
 
-  // const navbarRef = useRef();
+  const navbarRef = useRef();
   // const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
   // const handleLanguageClick = () => {
@@ -57,29 +56,29 @@ const Navbar = () => {
   //   },
   // ];
 
-  // const handleMenuIconClick = () => {
-  //   setOpenMenu(!openMenu);
-  // };
+  const handleMenuIconClick = () => {
+    setOpenMenu(!openMenu);
+  };
 
-  // const closeMenu = (e) => {
-  //   if (
-  //     openMenu &&
-  //     navbarRef.current &&
-  //     !navbarRef.current.contains(e.target)
-  //   ) {
-  //     setOpenMenu(false);
-  //   }
-  // };
+  const closeMenu = (e) => {
+    if (
+      openMenu &&
+      navbarRef.current &&
+      !navbarRef.current.contains(e.target)
+    ) {
+      setOpenMenu(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   if (openMenu) {
-  //     document.addEventListener("click", closeMenu);
+  useEffect(() => {
+    if (openMenu) {
+      document.addEventListener("click", closeMenu);
 
-  //     return () => {
-  //       document.removeEventListener("click", closeMenu);
-  //     };
-  //   }
-  // }, [openMenu]);
+      return () => {
+        document.removeEventListener("click", closeMenu);
+      };
+    }
+  }, [openMenu]);
 
   return (
     <div>Navbar</div>
