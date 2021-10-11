@@ -9,15 +9,15 @@ import React from "react";
 // // import SmallDeviceMenu from "./SmallDeviceMenu";
 // import LANGUAGE from "../../shared/localization/language";
 
-const bostaLogo = require(`../../assets/images/bosta_logo_${'en'
-  //LANGUAGE.language === "ar" ? "ar" : "en"
-}.svg`).default;
+// const bostaLogo = require(`../../assets/images/bosta_logo_${
+//   LANGUAGE.language === "ar" ? "ar" : "en"
+// }.svg`).default;
 
 
 const Navbar = () => {
-  /* const [openMenu, setOpenMenu] = useState(false);
+   const [openMenu, setOpenMenu] = React.useState(false);
 
-  const navbarRef = useRef();
+  /*const navbarRef = useRef();
   const { MAIN, PRICES, CALL_SALES, TRACK_SHIPMENT, LOGIN } = LANGUAGE.MENU;
 
   const handleLanguageClick = () => {
