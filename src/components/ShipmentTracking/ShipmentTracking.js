@@ -9,7 +9,7 @@ import DeliveryStatus from "./DeliveryStatus/DeliveryStatus";
 import ShipmentDetails from "./ShipmentDetails";
 import DeliveryAddress from "./DeliveryAddress";
 import ShipmentProblem from "./ShipmentProblem";
-import { axios } from 'axios';
+import axios from "axios";
 
 const ShipmentTracking = (props) => {
   const { match } = props;
