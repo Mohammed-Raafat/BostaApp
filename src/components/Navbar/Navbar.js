@@ -9,9 +9,9 @@ import React from "react";
 // // import SmallDeviceMenu from "./SmallDeviceMenu";
 // import LANGUAGE from "../../shared/localization/language";
 
-// const bostaLogo = require(`../../assets/images/bosta_logo_${
-//   LANGUAGE.language === "ar" ? "ar" : "en"
-// }.svg`).default;
+const bostaLogo = require(`../../assets/images/bosta_logo_${'en'
+  //LANGUAGE.language === "ar" ? "ar" : "en"
+}.svg`).default;
 
 
 const Navbar = () => {
