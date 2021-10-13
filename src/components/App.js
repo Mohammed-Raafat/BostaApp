@@ -14,6 +14,7 @@ import ShipmentTracking from "./ShipmentTracking/ShipmentTracking";
 import Footer from "./Footer";
 
 import LANGUAGE from "../shared/localization/language";
+import Test from './Test';
 
 // Create rtl cache
 const cacheRtl = createCache({
@@ -52,6 +53,7 @@ const App = () => {
                 exact
                 component={ShipmentTracking}
               />
+              <Route path="/prices" exact component={Test} />
               <Route path="/" exact component={Home} />
               <Route render={() => <Redirect to="/" />} />
             </Switch>
