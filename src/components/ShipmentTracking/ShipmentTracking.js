@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Grid, Container, CircularProgress, Typography } from "@mui/material";
 
 import LANGUAGE from "../../shared/localization/language";
-import BostaAPI from "../../apis/BostaAPI";
+import BOSTA_API from "../../apis/BostaAPI";
+
 import SearchBox from "./SearchBox";
 import DeliveryStatus from "./DeliveryStatus/DeliveryStatus";
 import ShipmentDetails from "./ShipmentDetails";
@@ -28,7 +29,7 @@ const ShipmentTracking = (props) => {
   const getShipmentDetails = () => {
     if (Number(trackingNum)) {
       setLoading(true);
-      BostaAPI.get(`/shipments/track/${trackingNum}`)
+      BOSTA_API.get(`/shipments/track/${trackingNum}`)
         .then((res) => {
           setShipmentDetails(res.data);
           setLoading(false);

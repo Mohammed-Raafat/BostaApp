@@ -1,4 +1,4 @@
-const statusColors = {
+const STATUS_COLORS = {
   TICKET_CREATED: "#F9BD0E", // Yellow
   PACKAGE_RECEIVED: "#F9BD0E", // Yellow
   OUT_FOR_DELIVERY: "#F9BD0E", // Yellow
@@ -7,4 +7,4 @@ const statusColors = {
   CANCELLED: "#F40105", // Red
 };
 
-export default statusColors;
+export default STATUS_COLORS;

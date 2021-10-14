@@ -1,21 +1,23 @@
 import React from "react";
 
-import { Container, Grid, Divider, Hidden, Box } from "@mui/material";
+import { Container, Grid, Divider, Box } from "@mui/material";
 
 import "./DeliveryStatus.css";
+
+import LANGUAGE from "../../../shared/localization/language";
+import STATUS_COLORS from "../../../shared/statusColors";
 import {
   getDay,
   getDate_DD_MM_YY,
   getTime,
   getDate_DD_Month_YY,
 } from "../../../shared/helperFunctions";
-import LANGUAGE from "../../../shared/localization/language";
-import StatusBar from "./StatusBar";
-import statusColors from "../../../shared/statusColors";
+
+import StatusBar from "./StatusBar/StatusBar";
 
 const DeliveryStatus = (props) => {
   const { shipmentDetails, transitEvents } = props;
-  
+
   const lastDate = new Date(shipmentDetails.CurrentStatus.timestamp);
   const promiseDate = shipmentDetails.PromisedDate
     ? getDate_DD_Month_YY(new Date(shipmentDetails.PromisedDate))
@@ -56,7 +58,7 @@ const DeliveryStatus = (props) => {
         <Item
           title={`${LANGUAGE.SHIPMENT_TRACKING.TRACKING_NUMBER} ${shipmentDetails.TrackingNumber}`}
           data={LANGUAGE.SHIPMENT_STATE[shipmentDetails.CurrentStatus.state]}
-          style={{ color: statusColors[shipmentDetails.CurrentStatus.state] }}
+          style={{ color: STATUS_COLORS[shipmentDetails.CurrentStatus.state] }}
         />
         <Item
           title={LANGUAGE.SHIPMENT_TRACKING.LAST_UPDATE}
@@ -71,12 +73,8 @@ const DeliveryStatus = (props) => {
           data={promiseDate}
         />
       </Grid>
-      <Hidden smDown>
-        <Divider variant="fullWidth" />
-        <Grid container>
-          <StatusBar transitEvents={transitEvents} />
-        </Grid>
-      </Hidden>
+      <Divider variant="fullWidth" />
+      <StatusBar transitEvents={transitEvents} />
     </Container>
   );
 };
