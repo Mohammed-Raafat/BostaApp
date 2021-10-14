@@ -16,6 +16,7 @@ const ShipmentTracking = (props) => {
 
   const trackingNum = match.params.trackingNum;
   const {
+    NUMBERS_ONLY,
     NETWORK_ERROR,
     NOT_FOUND,
     MAKE_SURE_OF_TRACKING_NUMBER,
@@ -56,6 +57,11 @@ const ShipmentTracking = (props) => {
           }
           setLoading(false);
         });
+    } else if (trackingNum) {
+      setError({
+        type: "NUMBERS_ONLY",
+        msg: NUMBERS_ONLY,
+      });
     }
   };
 
@@ -75,14 +81,14 @@ const ShipmentTracking = (props) => {
           variant="h5"
         />
       </Container>
-      {Number(trackingNum) && shipmentDetails ? (
-        loading ? (
-          <Container maxWidth="xs" style={{ textAlign: "center" }}>
-            <CircularProgress size={60} />
-          </Container>
-        ) : error ? (
-          <Typography textAlign="center">{error.msg}</Typography>
-        ) : (
+      {loading ? (
+        <Container maxWidth="xs" style={{ textAlign: "center" }}>
+          <CircularProgress size={60} />
+        </Container>
+      ) : error ? (
+        <Typography textAlign="center">{error.msg}</Typography>
+      ) : (
+        shipmentDetails && (
           <React.Fragment>
             <DeliveryStatus
               shipmentDetails={shipmentDetails}
@@ -101,7 +107,7 @@ const ShipmentTracking = (props) => {
             </Grid>
           </React.Fragment>
         )
-      ) : null}
+      )}
     </React.Fragment>
   );
 };
